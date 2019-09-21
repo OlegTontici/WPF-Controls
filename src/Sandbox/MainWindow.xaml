@@ -5,13 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sandbox"
         xmlns:playPauseControl="clr-namespace:PlayPauseControl;assembly=PlayPauseControl"
+        xmlns:switchControl="clr-namespace:SwitchControl;assembly=SwitchControl"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <UniformGrid Rows="7" Columns="7">
+    <Grid>
+        <UniformGrid Rows="7" Columns="7">
         <StackPanel>
             <TextBlock Text="{Binding ElementName=PlayPauseControl, Path=IsPause}" HorizontalAlignment="Center"/>
             <playPauseControl:PlayPauseControl Width="30" Height="40" Color="Red" x:Name="PlayPauseControl"/>
         </StackPanel>
-        <Button  Height="30" Grid.Column="1" Content="ShowToastNotification" Click="ShowToastNotificationButtonClick"/>
-    </UniformGrid>
+            <Button Height="30" Grid.Column="1" Content="ShowToastNotification" Click="ShowToastNotificationButtonClick"/>
+            <switchControl:SwitchControl Grid.Column="2" Width="36" Height="20"/>
+        </UniformGrid>
+    </Grid>
+    
 </Window>

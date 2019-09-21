@@ -97,11 +97,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WPFControls\WindowsNotification\WindowsNotification.csproj">
+    <ProjectReference Include="..\..\SwitchControl\SwitchControl.csproj">
+      <Project>{2b122ec2-fa90-48b1-aa47-b138540f9714}</Project>
+      <Name>SwitchControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsNotification\WindowsNotification.csproj">
       <Project>{b94e15b2-3a72-41c7-a8e5-fd63581f4b7f}</Project>
       <Name>WindowsNotification</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WPFControls\WindowsToastNotification\WindowsToastNotification.csproj">
+    <ProjectReference Include="..\WindowsToastNotification\WindowsToastNotification.csproj">
       <Project>{ccc1f7ab-d9c7-462c-ac01-44f0f254b6a0}</Project>
       <Name>WindowsToastNotification</Name>
     </ProjectReference>

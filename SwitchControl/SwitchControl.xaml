@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="SwitchControl.SwitchControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SwitchControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="36">
+    <Rectangle UIElement.MouseDown="Grid_MouseDown">
+        <Rectangle.Fill>
+            <VisualBrush>
+                <VisualBrush.Visual>
+                    <Canvas>
+                        <Border Width="36" Height="14" Background="#9e9e9e" CornerRadius="7" Margin="0,3,0,0">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=Value}" Value="True">
+                                            <DataTrigger.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#29b6f6" Duration="0:0:0.2">
+                                                            <ColorAnimation.EasingFunction>
+                                                                <CircleEase EasingMode="EaseOut"/>
+                                                            </ColorAnimation.EasingFunction>
+                                                        </ColorAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                            <DataTrigger.ExitActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#9e9e9e" Duration="0:0:0.2">
+                                                            <ColorAnimation.EasingFunction>
+                                                                <CircleEase EasingMode="EaseOut"/>
+                                                            </ColorAnimation.EasingFunction>
+                                                        </ColorAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.ExitActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                        </Border>
+                        <Ellipse Width="20" Height="20" Fill="#616161">
+                            <Ellipse.RenderTransform>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Ellipse.RenderTransform>
+                            <Ellipse.Style>
+                                <Style TargetType="Ellipse">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=Value}" Value="True">
+                                            <DataTrigger.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(Ellipse.RenderTransform).(TranslateTransform.X)" To="16" Duration="0:0:0.2">
+                                                            <DoubleAnimation.EasingFunction>
+                                                                <ExponentialEase EasingMode="EaseOut" Exponent="4"/>
+                                                            </DoubleAnimation.EasingFunction>
+                                                        </DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)" To="#0288d1" Duration="0:0:0.3"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                            <DataTrigger.ExitActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(Ellipse.RenderTransform).(TranslateTransform.X)" To="0" Duration="0:0:0.2">
+                                                            <DoubleAnimation.EasingFunction>
+                                                                <ExponentialEase EasingMode="EaseOut" Exponent="4"/>
+                                                            </DoubleAnimation.EasingFunction>
+                                                        </DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)" To="#616161" Duration="0:0:0.3"/> 
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.ExitActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Ellipse.Style>
+                        </Ellipse>
+                    </Canvas>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Rectangle.Fill>
+    </Rectangle>
+</UserControl>
